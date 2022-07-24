@@ -17,10 +17,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        // Este sinal de interrogação é para o babel loader levar em consideração os arquivos com extensão jsx e js 
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: 'babel-loader',
-      }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
   devServer: {
