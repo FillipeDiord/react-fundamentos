@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { PostHeader } from './PostHeader';
 
-import styles from '../Post.scss';
+import styles from './Post.scss';
 
 export function Post(props) {
   return (
