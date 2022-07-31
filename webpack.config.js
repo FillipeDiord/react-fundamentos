@@ -22,6 +22,7 @@ module.exports = {
         exclude: /node_modules/,
         use: 'babel-loader',
       },
+      //Loader para lidar com arquivos css
       {
         test: /\.css$/,
         use: [
@@ -31,7 +32,22 @@ module.exports = {
             options: {
               modules: true,
             }
+          }
+        ],
+      },
+      //Loader para lidar com arquivos scss
+      //Quando é utilizado o sass
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            }
           },
+          'sass-loader',
         ],
       },
     ],
