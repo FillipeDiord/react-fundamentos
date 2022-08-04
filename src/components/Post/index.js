@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { PostHeader } from './PostHeader';
 
+import { Subtitle, Rate } from './styles';
 import styles from './Post.scss';
 
 export function Post(props) {
   return (
     <article
-      className={ 
+      className={
         props.post.removed
           ? styles.postDeleted
           : styles.post
@@ -21,10 +22,9 @@ export function Post(props) {
           read: props.post.read,
         }}
       />
-      <br />
-      <small>{props.post.subtitle}</small>
-      <br />
-      Media: {props.post.likes / 2}
+
+      <Subtitle>{props.post.subtitle}</Subtitle>
+      <Rate>Media: {props.post.likes / 2}</Rate>
     </article>
   );
 }
